@@ -1,0 +1,58 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.footer {
+  border-top: 1px solid $midGray;
+  color: #777;
+  height: 20px;
+  text-align: center;
+  padding: 10px 15px;
+
+  &::before {
+    box-shadow: 0 1px 1px #0003, 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px #0003, 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px #0003;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.count {
+  float: left;
+  text-align: left;
+}
+
+.filters {
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+
+  li {
+    display: inline;
+  }
+}
+
+.button {
+  @include button-reset;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-sizing: content-box;
+  color: inherit;
+  margin: 3px;
+  padding: 3px 7px;
+
+  &:hover {
+    border-color: #af2f2f1a;
+  }
+
+  &--selected {
+    border-color: #af2f2f33;
+  }
+}

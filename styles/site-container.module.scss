@@ -1,0 +1,11 @@
+@use 'variables' as *;
+@use 'unit-convert' as *;
+
+.site-container {
+  background: $white;
+  box-shadow: 0 2px 4px 0 #0003, 0 25px 50px 0 #0000001a;
+  margin: 130px auto 40px;
+  min-width: rem(230px);
+  max-width: rem(550px);
+  position: relative;
+}

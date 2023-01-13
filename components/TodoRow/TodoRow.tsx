@@ -1,4 +1,6 @@
 import { TodoItem } from '@/pages';
+import todoRowStyles from './TodoRow.module.scss';
+import clsx from 'clsx';
 
 interface TodoRowProps {
   item: TodoItem;
@@ -16,8 +18,20 @@ function TodoRow({ item, updateTodoItem }: TodoRowProps): JSX.Element {
 
   return (
     <div>
-      <input type="checkbox" checked={item.isComplete} onChange={toggleTodo} />
-      <label>{item.text}</label>
+      <input
+        type="checkbox"
+        checked={item.isComplete}
+        onChange={toggleTodo}
+        className={todoRowStyles.input}
+      />
+      <label
+        className={clsx(
+          todoRowStyles.label,
+          item.isComplete && todoRowStyles['label--completed']
+        )}
+      >
+        {item.text}
+      </label>
     </div>
   );
 }

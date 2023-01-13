@@ -1,0 +1,21 @@
+@use '../../styles/variables.scss' as *;
+
+.todo-input {
+  background: #00000001;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 1.5rem;
+  line-height: 1.4em;
+  margin: 0;
+  padding: 16px 16px 16px 60px;
+  position: relative;
+  width: 100%;
+
+  &::placeholder {
+    color: $midGray;
+    font-weight: 300;
+    font-style: italic;
+  }
+}
