@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import todoInput from '@/components/TodoInput/todoInput.css';
 
 interface TodoInputProps {
   createTodo: (text: string) => void;
@@ -27,6 +28,7 @@ function TodoInput({ createTodo }: TodoInputProps): JSX.Element {
       onChange={(e) => setTodoValue(e.target.value)}
       onBlur={handleBlur}
       onKeyDown={handleKeydown}
+      className={todoInput}
     />
   );
 }

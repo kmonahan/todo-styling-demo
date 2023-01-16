@@ -1,4 +1,9 @@
 import { TodoItem } from '@/pages';
+import {
+  todoRowCheckbox,
+  todoRowLabel,
+  todoRowLabelComplete,
+} from '@/components/TodoRow/styles.css';
 
 interface TodoRowProps {
   item: TodoItem;
@@ -16,8 +21,15 @@ function TodoRow({ item, updateTodoItem }: TodoRowProps): JSX.Element {
 
   return (
     <div>
-      <input type="checkbox" checked={item.isComplete} onChange={toggleTodo} />
-      <label>{item.text}</label>
+      <input
+        type="checkbox"
+        checked={item.isComplete}
+        onChange={toggleTodo}
+        className={todoRowCheckbox}
+      />
+      <label className={item.isComplete ? todoRowLabelComplete : todoRowLabel}>
+        {item.text}
+      </label>
     </div>
   );
 }
