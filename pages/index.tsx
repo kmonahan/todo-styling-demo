@@ -1,11 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
 import TodoInput from '@/components/TodoInput/TodoInput';
 import TodoList from '@/components/TodoList/TodoList';
 import { useMemo, useRef, useState } from 'react';
-
-const inter = Inter({ subsets: ['latin'] });
+import SiteContainer from '@/styles/SiteContainer';
 
 interface TodoItem {
   id: number;
@@ -60,12 +58,12 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className={SiteContainer}>
       <Head>
         <title>Todo App</title>
       </Head>
       <header>
-        <h1>todos</h1>
+        <h1 className="page-title">todos</h1>
         <TodoInput createTodo={addTodoItem} />
       </header>
       {todoItems.length > 0 && (
@@ -73,8 +71,9 @@ export default function Home() {
           items={displayedItems}
           updateTodoItem={updateTodoItem}
           updateFilter={setFilter}
+          currentFilter={filter}
         />
       )}
-    </>
+    </div>
   );
 }
